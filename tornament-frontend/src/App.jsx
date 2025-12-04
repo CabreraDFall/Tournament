@@ -1,13 +1,13 @@
-import Title from "./compontents/Title"
+import { Route, Routes } from "react-router";
+import Matches from "./pages/Matches";
 
 
 function App() {
-  
   return (
-  
-    <Title title="Title"/>
-  
-  )
+    <Routes>
+      <Route path="/" element={<Matches />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

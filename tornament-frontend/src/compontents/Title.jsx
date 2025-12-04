@@ -1,9 +1,11 @@
+import styles from "./Title.module.css";
+
 function Title({ title }) {
-    return(
-        <h2>
-            {title}
-        </h2>  
-    )
+  return (
+    <section>
+      <h2>{title}</h2>
+    </section>
+  );
 }
 
-export default Title
+export default Title;
