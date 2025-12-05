@@ -1,0 +1,208 @@
+.matchesContainer {
+  width: 100%;
+  max-width: 500px;
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-light);
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.matchList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.matchCard {
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  transition: all 0.3s ease;
+}
+
+.matchCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Jugador */
+.player {
+  flex: 1;
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.player.winner {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+}
+
+.player.loser {
+  background-color: var(--color-bg-white);
+  color: var(--color-text-dark);
+}
+
+/* Avatar */
+.playerAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.player.winner .playerAvatar {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.player.loser .playerAvatar {
+  background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%);
+  color: var(--color-primary);
+}
+
+/* Info del jugador */
+.playerInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.playerName {
+  font-size: 0.938rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.player.winner .playerName {
+  color: white;
+}
+
+.player.loser .playerName {
+  color: var(--color-text-dark);
+}
+
+.playerScore {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.player.winner .playerScore {
+  color: white;
+}
+
+.player.loser .playerScore {
+  color: var(--color-text-light);
+}
+
+/* Corona del ganador */
+.crownIcon {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  font-size: 1.25rem;
+}
+
+/* Separador VS */
+.vsSeparator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--spacing-md);
+  background-color: var(--color-bg-white);
+  gap: 4px;
+  min-width: 60px;
+}
+
+.vsText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+}
+
+.vsScores {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vsScore {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.vsScore.winner {
+  color: var(--color-primary-blue);
+}
+
+.vsDivider {
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .matchesContainer {
+    padding: var(--spacing-md);
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .player {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .playerAvatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .playerName {
+    font-size: 0.813rem;
+  }
+
+  .playerScore {
+    font-size: 1.5rem;
+  }
+
+  .vsSeparator {
+    padding: 0 var(--spacing-sm);
+    min-width: 50px;
+  }
+
+  .vsScore {
+    font-size: 1rem;
+  }
+}

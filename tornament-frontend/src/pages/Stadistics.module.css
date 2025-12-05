@@ -1,0 +1,187 @@
+.rankingContainer {
+    width: 100%;
+    max-width: 800px;
+    padding: 24px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #1a1a1a;
+}
+
+.tableWrapper {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableHeader {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.tableHeader th {
+    padding: 16px 12px;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tableHeader th:first-child {
+    padding-left: 24px;
+    width: 60px;
+}
+
+.tableHeader th:last-child {
+    padding-right: 24px;
+}
+
+.tableBody tr {
+    border-bottom: 1px solid #f1f3f5;
+    transition: background-color 0.2s ease;
+}
+
+.tableBody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.tableBody tr:last-child {
+    border-bottom: none;
+}
+
+.tableBody td {
+    padding: 16px 12px;
+    font-size: 0.938rem;
+}
+
+.tableBody td:first-child {
+    padding-left: 24px;
+}
+
+.tableBody td:last-child {
+    padding-right: 24px;
+}
+
+/* Posición */
+.position {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #495057;
+}
+
+/* Top 3 destacado */
+.tableBody tr:nth-child(1) .position {
+    color: #ffd700;
+    font-size: 1.25rem;
+}
+
+.tableBody tr:nth-child(2) .position {
+    color: #c0c0c0;
+    font-size: 1.25rem;
+}
+
+.tableBody tr:nth-child(3) .position {
+    color: #cd7f32;
+    font-size: 1.25rem;
+}
+
+/* Jugador */
+.playerCell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.playerIcon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.playerName {
+    font-weight: 500;
+    color: #212529;
+}
+
+/* Estadísticas */
+.wins {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.losses {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.pct {
+    font-weight: 600;
+    color: #495057;
+}
+
+.gamesPlayed {
+    color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .rankingContainer {
+        padding: 16px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+
+    .tableHeader th,
+    .tableBody td {
+        padding: 12px 8px;
+        font-size: 0.813rem;
+    }
+
+    .tableHeader th:first-child,
+    .tableBody td:first-child {
+        padding-left: 16px;
+    }
+
+    .tableHeader th:last-child,
+    .tableBody td:last-child {
+        padding-right: 16px;
+    }
+
+    .playerIcon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+
+    .position {
+        font-size: 1rem;
+    }
+
+    .tableBody tr:nth-child(1) .position,
+    .tableBody tr:nth-child(2) .position,
+    .tableBody tr:nth-child(3) .position {
+        font-size: 1.125rem;
+    }
+}

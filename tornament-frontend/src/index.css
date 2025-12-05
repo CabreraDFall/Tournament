@@ -8,8 +8,8 @@ body{
     display: flex;
     height: 100vh;
     justify-content: center;
-    font-family: 'Inter Variable' ;
-
+    font-family: 'Inter Variable';
+    background-color: var(--color-bg-light, #f7fafc);
 }
 
 @font-face {

@@ -1,0 +1,313 @@
+/* Global styles que se usarán en toda la app */
+:root {
+  /* Colores principales del sistema */
+  --color-primary-blue: #1DB5E8;
+  --color-secondary-orange: #FF6B35;
+  --color-tertiary-purple: #8B5CF6;
+  --color-accent-green: #2DD4BF;
+  
+  /* Colores de texto */
+  --color-text-dark: #1a202c;
+  --color-text-medium: #4a5568;
+  --color-text-light: #718096;
+  
+  /* Colores de fondo */
+  --color-bg-light: #f7fafc;
+  --color-bg-white: #ffffff;
+  
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  
+  /* Espaciado */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Bordes */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+}
+
+.rankingContainer {
+  width: 100%;
+  max-width: 500px;
+  padding: var(--spacing-lg);
+  background-color: var(--color-bg-light);
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Podio del Top 3 */
+.podiumContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  padding: 0 var(--spacing-sm);
+}
+
+.podiumCard {
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.podiumCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Primera posición - más grande y en el centro */
+.podiumCard.first {
+  width: 140px;
+  padding: var(--spacing-lg) var(--spacing-md);
+  order: 2;
+}
+
+/* Segunda posición - izquierda */
+.podiumCard.second {
+  width: 120px;
+  padding: var(--spacing-md) var(--spacing-sm);
+  order: 1;
+}
+
+/* Tercera posición - derecha */
+.podiumCard.third {
+  width: 120px;
+  padding: var(--spacing-md) var(--spacing-sm);
+  order: 3;
+}
+
+.medalIcon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.placeLabel {
+  font-size: 0.625rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.placeNumber {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: var(--spacing-md);
+}
+
+.placeNumber.first {
+  color: var(--color-primary);
+}
+
+.placeNumber.second {
+  color: var(--color-secondary-orange);
+}
+
+.placeNumber.third {
+  color: var(--color-tertiary-blue);
+}
+
+.playerAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.podiumCard.first .playerAvatar {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+}
+
+.podiumCard.second .playerAvatar {
+  background: linear-gradient(135deg, #FF6B35 0%, #F97316 100%);
+}
+
+.podiumCard.third .playerAvatar {
+  background: linear-gradient(135deg, #1DB5E8 0%, #0891B2 100%);
+}
+
+.playerName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.scoreLabel {
+  font-size: 0.625rem;
+  color: var(--color-text-light);
+  margin-bottom: 2px;
+}
+
+.playerScore {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.podiumCard.first .playerScore {
+  color: var(--color-primary);
+  font-size: 1.125rem;
+}
+
+.podiumCard.second .playerScore {
+  color: var(--color-secondary-orange);
+}
+
+.podiumCard.third .playerScore {
+  color: var(--color-tertiary-blue);
+}
+
+/* Lista del resto de posiciones */
+.restList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.playerCard {
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: all 0.2s ease;
+}
+
+.playerCard:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.position {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  min-width: 24px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #2DD4BF 0%, #14B8A6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.playerInfo {
+  flex: 1;
+}
+
+.name {
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.score {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent-green);
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .rankingContainer {
+    padding: var(--spacing-md);
+  }
+
+  .title,
+  .subtitle {
+    font-size: 1.75rem;
+  }
+
+  .podiumCard.first {
+    width: 130px;
+  }
+
+  .podiumCard.second,
+  .podiumCard.third {
+    width: 110px;
+  }
+
+  .placeNumber {
+    font-size: 2.5rem;
+  }
+
+  .podiumCard.first .playerAvatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .playerAvatar {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .playerCard {
+    padding: var(--spacing-sm);
+  }
+}
